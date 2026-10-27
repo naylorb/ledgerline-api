@@ -1,0 +1,2 @@
+name: ledgerline-monthly
+columns: [id, customer, total_cents, status]
