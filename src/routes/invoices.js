@@ -30,8 +30,8 @@ router.get('/:id', (req, res) => {
 
 router.post('/:id/refund', (req, res) => {
   const invoice = db
-    .prepare('SELECT * FROM invoices WHERE id = ? AND org_id = ?')
-    .get(req.params.id, req.user.orgId);
+    .prepare('SELECT * FROM invoices WHERE id = ?')
+    .get(req.params.id);
   if (!invoice) return res.status(404).end();
 
   const amount = Number(req.body.amount_cents);
